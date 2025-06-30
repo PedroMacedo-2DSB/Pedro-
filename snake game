@@ -41,3 +41,9 @@ export default function SnakeGame() {
 
     }
 };
+ cosnt newSnake = [newHead, ...prev];
+
+newSnake.pop(); 
+
+return newSnake;
+
