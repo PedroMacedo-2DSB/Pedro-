@@ -46,4 +46,36 @@ export default function SnakeGame() {
 newSnake.pop(); 
 
 return newSnake;
+});
+}
+
+useEffect (() => {
+    moveInterval.current = setInterval (() => {
+              if(!IsGameOver) moveSnake();
+            },200)
+return () => clearInterval (moveInterval,current);
+}, [direction]);
+
+const renderCell = (x,y) => {
+
+cosnt isSnake = snake.some (cell => cell.x === x && cell.y ===y)
+
+return(
+  <view
+       key={'${x}-${y}')
+       style= {[styles.cell, isSnake && styles.snake]}
+/>
+  };
+};
+
+cosnt renderGrid = () =>{
+  let rows = [];
+
+for (let y = 0;y < Grid_Size; y++){
+    let row = [];
+    for (let x; x < Grid_Size; x++){
+    row.push (renderCell(x,y));
+  }
+ row.push (<view key ={y}
+
 
